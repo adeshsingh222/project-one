@@ -14,6 +14,7 @@ const createBlog = async function (req, res) {
       {if(blog.isPublished)
         {let createBlogs = await blogModel.create(yid);
         return res.status(201).send({ status: true, data: createBlogs })}
+        
         else{let createBlogs = await blogModel.create(nid);
           return res.status(201).send({ status: true, data: createBlogs })}
       } else return res.status(400).send({status:true, message:"isPublished is not boolean"})
